@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" /> -->
+
+    <!-- FireBase 🔥 -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+    <!-- Icons 😁 -->
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+    <!-- Title with Icons 😎 -->
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+    <link rel="stylesheet" href="another.css" />
+    <title>GoChat-imgs</title>
+</head>
+
+<body>
+    <div class="content">
+        <a onclick="skip()" style="text-decoration: none; display: none" id="btn_img_next_skip">Skip ></a>
+        <div class="text" id="mainText">Chats</div>
+        <div class="output_bak" id="output" style="text-align: left;"></div>
+
+        <div class="contain" id="contain" style="display: flex;">
+            <div class="microbtn" id="upload_btn">
+                <i class="bx bx-image-add icon icon_pin" onclick="clickattach()"></i>
+                <input type="file" name="files[]" id="files" />
+            </div>
+            <div class="send" style="display: flex" id="send_btn">
+                <input type="text" id="msg" class="input_msg" placeholder="Message" autocomplete="off" />
+                <div class="sendbtn" onclick="send()">
+                    <i class="bx bx-send icon send_icon"></i>
+                </div>
+            </div>
+
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <h2>Upload this Image ...</h2>
+                    <p>
+                        Would you like to share this image, <br />
+                        you can delet it also....
+                    </p>
+                    <img id="myimg" width="200px" height="auto" /><br />
+                    <div class="send_pop">
+                        <div class="sendbtn" id="upload" onclick="uploadImage()">
+                            <i class="bx bx-send icon send_icon"></i>
+                        </div>
+                        <div class="sendbtn" id="cancel" onclick="cancelImage()">
+                            <h2 class="text_cancel_btn">Cancel...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay overlay_img" id="overlay_img">
+                <div class="popup popup_img" id="popup_img">
+                    <i class='bx bx-x icon_cut'
+                        onclick="document.getElementById('overlay_img').style.display = 'none'"></i>
+                    <div class="align_img">
+                        <img id="myimg_image" /><br />
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+
+
+            <div class="overlay_del over_del" id="overlay_clear">
+                <div class="popup_del pop_del" id="popup_clear">
+                    <h2 id="del_text">Clear this chat ?</h2>
+                    <p>Messages would not be accessible...</p>
+                    <div class="send_pop send_pop_del">
+                        <div class="sendbtn" id="upload" onclick="clearChat()">
+                            <i class="bx bx-check send_icon"></i>
+                        </div>
+                        <div class="sendbtn" id="cancel"
+                            onclick="document.getElementById('overlay_clear').style.display='none'">
+                            <h2 class="text_cancel_btn">Cancel...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="btnCloseEmer" onclick="deleteSelectedMessages()" style="display: none;"> <i
+                    class='bx bx-x icon_close'></i></button>
+            <button id="btnopenimg" onclick="window.location='index.html'"> <i class='bx bx-arrow-back' ></i></button>
+        </div>
+    </div>
+
+    <script src="bakwas.js"></script>
+</body>
+
+</html>
